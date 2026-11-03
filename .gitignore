@@ -1,0 +1,15 @@
+# Personal Instagram data
+Sample IG Download/
+*.zip
+not_following_back.txt
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+build/
+*.egg-info/
