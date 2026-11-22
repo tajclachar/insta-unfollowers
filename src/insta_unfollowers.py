@@ -5,6 +5,9 @@ class InstaAnalysis():
 
         # Type Check
         if type(self.followers) != set:
+            raise TypeError("Please only insert a set here!")
+        if type(self.following) != set:
+            raise TypeError("Please only insert a set here!")
 
         # Value Check
 
