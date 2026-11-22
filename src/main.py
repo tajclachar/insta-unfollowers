@@ -1,32 +1,24 @@
 # Main: Where the function runs
 
-from insta_unfollowers import 
+# from insta_unfollowers
 from pathlib import Path
-from bs4 import BeautifulSoup
-from parsing import get_directory, parse_followers, parse_following
+from parsing import get_directory, parse_followers, parse_following, read_soup
+from insta_unfollowers import InstaAnalysis
 
 def main() -> None:
     """Prompt an export folder, discover who isn't following back and save the list down"""
 
     folder = input("Path to your Instagram export folder: ").strip().strip("'\"")
     connection_directory = get_directory(Path(folder).expanduser())
+    parsed_html = read_soup(connection_directory)
+    followers = parse_followers(parsed_html)
+    following = parse_following(parsed_html)
 
-    # Get the following file
-    following = parse_following(read_soup(connection_directory / "following.html"))
-
-    # Get followers file
-    followers = set()
-    for file in connection_directory.glob("followers_*.html"):
-        followers |= parse_followers(read_soup(file))
-
-    # Calculate the difference between the followers and following
-    result = not_following_back(following, followers)
+    # Create Analysis object
+    account_object = InstaAnalysis(followers, following)
+    account_object.not_following__you_back()
 
 
-
-    # Saving the results as a text file
-    save_result(result, Path("not_following_back.txt"))
-    print("Full list saved to not_following_back.txt")
 
 if __name__ == "__main__":
     main()
