@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="344" viewBox="0 0 720 344" role="img" aria-label="Terminal output of insta-unfollowers on the sample export, listing 6 accounts that don't follow back">
+  <rect width="720" height="344" rx="10" fill="#14161a"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" fill="#d7dae0">
+    <text x="28" y="44"><tspan fill="#6b7280">$</tspan> insta-unfollowers</text>
+    <text x="28" y="72"><tspan fill="#9aa1ad">Path to your Instagram export folder:</tspan> example_export</text>
+    <text x="28" y="116">brand.deals.daily</text>
+    <text x="28" y="140">crypto_king_99</text>
+    <text x="28" y="164">famous_celeb</text>
+    <text x="28" y="188">gym_motivation_hub</text>
+    <text x="28" y="212">meme_central</text>
+    <text x="28" y="236">old_classmate_22</text>
+    <text x="28" y="280" fill="#f58ea8" font-weight="600">6 accounts aren't following you back :(</text>
+    <text x="28" y="308" fill="#9aa1ad">Full list saved to not_following_back.txt</text>
+  </g>
+</svg>
