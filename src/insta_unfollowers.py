@@ -36,6 +36,7 @@ class InstaAnalysis():
 if __name__ == "__main__":
     t = InstaAnalysis({'a', '1', 'b'}, {'a', 'drake', '2'})
     print(t.following_and_followers())
+    print(t.not_following_you_back())
 
 
 
