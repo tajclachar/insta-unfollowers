@@ -26,17 +26,23 @@ class InstaAnalysis():
         """Return a sorted list of accounts that don't follow you back."""
         return sorted(self.following.difference(self.followers))
 
+
     def accounts_you_dont_follow_back(self):
-        pass
+        """Return a list of accounts that you follow, but don't follow back."""
+        return sorted(self.followers.difference(self.following))
+
 
     def mutuals(self):
-        pass
+        """Returns a list of elements that are in both of the sets. """
+        return sorted(self.following.intersection(self.followers))
 
 
 if __name__ == "__main__":
     t = InstaAnalysis({'a', '1', 'b'}, {'a', 'drake', '2'})
     print(t.following_and_followers())
     print(t.not_following_you_back())
+    print(t.accounts_you_dont_follow_back()) 
+    print(t.mutuals()) 
 
 
 
