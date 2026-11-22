@@ -10,13 +10,15 @@ def main() -> None:
 
     folder = input("Path to your Instagram export folder: ").strip().strip("'\"")
     connection_directory = get_directory(Path(folder).expanduser())
-    parsed_html = read_soup(connection_directory)
-    followers = parse_followers(parsed_html)
-    following = parse_following(parsed_html)
+    followers = parse_followers(connection_directory)
+    following = parse_following(connection_directory)
 
     # Create Analysis object
-    account_object = InstaAnalysis(followers, following)
-    account_object.not_following__you_back()
+    account = InstaAnalysis(followers, following)
+    print(len(account.followers))
+    print(len(account.following))
+    print(account.not_following__you_back())
+
 
 
 
