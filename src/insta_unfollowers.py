@@ -36,6 +36,30 @@ class InstaAnalysis():
         """Returns a set of elements that are in both of the sets. """
         return self.following.intersection(self.followers)
 
+    def cartesian_product(self) -> list[tuple]:
+        """returns a list of 2-element tuples which contain a follower and following"""
+        every_pair = []
+
+        for follower in self.followers:
+            for following in self.following:
+                pair = (follower, following)
+                every_pair.append(pair)
+        return every_pair
+
+
+
+    def cartesian_mutual_count(self) -> list[tuple]:
+        """returns a list of 2-element tuples which contain a follower and following"""
+        every_pair = []
+
+        for follower in self.followers:
+            for following in self.following:
+                if follower == following:
+                    pair = (follower, following)
+                    every_pair.append(pair)
+        return every_pair
+
+
 
 if __name__ == "__main__":
     t = InstaAnalysis({'a', '1', 'b'}, {'a', 'drake', '2'})
