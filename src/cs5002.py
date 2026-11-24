@@ -48,7 +48,7 @@ def main():
     # Let F = Followers, G = Following, U = all the followers and following, the universal set
     # Is x ∈ F ∩ G equivalent to (x ∈ F) AND (x ∈ G)?
     # mutuals we already have
-    # { x ∈ F ∩ G | (x ∈ F) ∧ (x ∈ G) }
+    # { x ∈ U | (x ∈ F) ∧ (x ∈ G) }
     print(mutuals == {val for val in universal_set if val in followers and val in following})   
     print(mutuals == (followers.intersection(following)))
 
@@ -59,16 +59,14 @@ def main():
     complement_f = universal_set - followers
     complement_g = universal_set - following
 
-    # Both sets are empty and they equal each other.
+    # Both sets are full of non-mutuals.
     print(com_f_and_g == (complement_f | complement_g))
 
     # Inclusion Exclusion Principle
     # The union of two sets F and G
-    num_followers = len(followers)
-    num_following = len(following)
 
-    total_accounts = num_following + num_followers
-    total_unique_accounts = (num_followers + num_following - len(mutuals))
+    total_accounts = len(following) + len(followers)
+    total_unique_accounts = (len(followers) + len(following) - len(mutuals))
     print(f"The number of total accounts (including dupes) is {total_accounts}, but by using the inclusion exclusion principle, we can get the number of unique accounts which is {total_unique_accounts}!")
     print(f"Is the number of unique accounts equal to the number of accounts in the universal set? {total_unique_accounts == len(universal_set)}")
 
@@ -82,7 +80,20 @@ def main():
     cartesian_mutuals = account.cartesian_mutual_count()
     print(f"Is the length of the cartesian product of the following and followers set equal to finding the mutuals using set operations? {(len(cartesian_mutuals) == len(mutuals))}")
 
-    # Probability
+    # Probability |E| / |S|
+    # Here our Sample Space is the universal set which si the
+    # If I follow someone? Wat is the chance that they follow me back? I other words, what is P(F | G)?
+    # P(F | G) = |F ∩ G| / |G| -> The number of mutuals divided by the number of followers
+    prob_follows_you_back = len(mutuals) / len(following)
+
+    # If someone follows me, what are the odds that I follow them back?
+    # P(G | F) = |F ∩ G| / |F| -> The number of mutuals divided by the number of followers
+    prob_follows_you_back = len(mutuals) / len(followers)
+
+
+    # Bayes theorem can also be used to find the odds that I following someone back if they follow me
+
+
     
 
 if __name__ == "__main__":
