@@ -39,9 +39,10 @@ def main() -> None:
         print(name)
     
     # Save the Results
+    save_path = Path("not_following_back.txt")
     if save_decision == "y":
-        save_result(not_following_back, Path("not_following_you_back.txt"))
-        print("-= Saved to not_following_you_back.txt ❗ =- ")
+        save_result(not_following_back, save_path)
+        print(f"-= Saved to {save_path.resolve()} ❗ =- ")
 
 
 if __name__ == "__main__":
