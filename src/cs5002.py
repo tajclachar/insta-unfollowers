@@ -8,7 +8,7 @@ from insta_unfollowers import InstaAnalysis
 
 
 def main():
-    connection_directory = get_directory(Path('/Users/tajclachar/Documents/Computer Science/Projects/01 Instagram Followers/example_export').expanduser())
+    connection_directory = get_directory(Path('../example_export'))
 
     # Create sets for the user's followers and following
     followers = parse_followers(connection_directory)
@@ -91,6 +91,7 @@ def main():
     # P(G | F) = |F ∩ G| / |F| -> The number of mutuals divided by the number of followers
     prob_follows_you_back = len(mutuals) / len(followers)
 
+    
 
 if __name__ == "__main__":
     main()

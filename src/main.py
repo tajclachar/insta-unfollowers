@@ -2,8 +2,9 @@
 
 # from insta_unfollowers
 from pathlib import Path
-from parsing import get_directory, parse_followers, parse_following, read_soup
+from parsing import get_directory, parse_followers, parse_following
 from insta_unfollowers import InstaAnalysis
+from stats import summary
 
 def main() -> None:
     """Prompt an export folder, discover who isn't following back and save the list down"""
@@ -21,10 +22,7 @@ def main() -> None:
     # Create Analysis object
     account = InstaAnalysis(followers, following)
     
-    print(len(account.followers))
-    print(len(account.following))
-    print(account.not_following_you_back())
-
+    print(summary(account))
 
 if __name__ == "__main__":
     main()
