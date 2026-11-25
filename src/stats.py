@@ -34,14 +34,27 @@ def num_cartesian_mutuals_pairs(cartesian_mutual_list: list) -> int:
 def unique_accounts(account: InstaAnalysis) -> int:
     return (len(account.followers) + len(account.following) - len(account.mutuals()))
 
-def chance_follows_you_back(account: InstaAnalysis) -> float:
-    return len(account.mutuals()) / len(account.following)
-
 
 def chance_you_follow_back(account: InstaAnalysis) -> float:
     return len(account.mutuals()) / len(account.followers)
 
 
+def chance_follows_you_back(account: InstaAnalysis) -> float:
+    return len(account.mutuals()) / len(account.following)
+
 
 def summary(account: InstaAnalysis) -> dict:
-    pass
+
+    number_of_followers = len(account.followers)
+    number_of_following = len(account.following)
+    number_of_mutuals = len(account.mutuals())
+    probability_you_follow_them = chance_you_follow_back(account)
+    probability_they_follow_you_back = chance_follows_you_back(account)
+
+    summary_dict = {"Number of Followers":number_of_followers,
+                    "Number of Following":number_of_following,
+                    "Number of Friends (Mutuals)":number_of_mutuals,
+                    "Probability you follow someone back":probability_you_follow_them,
+                    "Probability someone follows you back":probability_they_follow_you_back}
+
+    return summary_dict

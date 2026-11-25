@@ -76,7 +76,7 @@ def main():
     # Check if the length of the cartesian product is equal to the cardinality of 
     # the followers set multiplied by the cardinality of the following set
     all_pairs = cartesian_product(account)
-    print(f"Is the length of the cartesian product equal to the length of the product of the cardinalities of the following and followers set?: {len(cartesian_product) == (len(following) * len(followers))}")
+    print(f"Is the length of the cartesian product equal to the length of the product of the cardinalities of the following and followers set?: {len(all_pairs) == (len(following) * len(followers))}")
 
     cartesian_mutuals = cartesian_mutual_pairs(account)
     print(f"Is the length of the cartesian product of the following and followers set equal to finding the mutuals using set operations? {(len(cartesian_mutuals) == len(mutuals))}")
