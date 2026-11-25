@@ -26,6 +26,7 @@ def main() -> None:
     account = InstaAnalysis(followers, following)
 
     # Print the stats
+    print("\n -= Stats 📐 =- ")
     for key, value in summary(account).items():
         print(f"{key}: {value}")
 
@@ -33,13 +34,14 @@ def main() -> None:
     not_following_back = sorted(account.not_following_you_back())
 
     # Print a list of those who aren't following you back
+    print("\n -= Not following you back 💀 =- ")
     for name in not_following_back:
         print(name)
     
     # Save the Results
     if save_decision == "y":
         save_result(not_following_back, Path("not_following_back.txt"))
-        print("Saved to not_following_you_back.txt")
+        print("-= Saved to not_following_you_back.txt ❗ =- ")
 
 
 if __name__ == "__main__":
