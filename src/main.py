@@ -29,11 +29,17 @@ def main() -> None:
     for key, value in summary(account).items():
         print(f"{key}: {value}")
 
-    if save_decision == "y":
-        not_following_back = sorted(account.not_following_you_back())
-        save_result(not_following_back, Path("not_following_back.txt"))
-        print("Saved to not_following_you_ack.txt")
+    # Sorted list of accounts not following the user back
+    not_following_back = sorted(account.not_following_you_back())
+
+    # Print a list of those who aren't following you back
+    for name in not_following_back:
+        print(name)
+    
     # Save the Results
+    if save_decision == "y":
+        save_result(not_following_back, Path("not_following_back.txt"))
+        print("Saved to not_following_you_back.txt")
 
 
 if __name__ == "__main__":
