@@ -21,8 +21,11 @@ def main() -> None:
 
     # Create Analysis object
     account = InstaAnalysis(followers, following)
+
     
-    print(summary(account))
+    for key, value in summary(account).items():
+        print(f"{key}: {value}")
+
 
 if __name__ == "__main__":
     main()
