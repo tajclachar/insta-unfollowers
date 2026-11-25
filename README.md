@@ -4,7 +4,7 @@ Created by Taj Clachar
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Insta Unfollowers is a command-line tool that can be used to find the Instagram accounts that don't follow you back. By using an export from Instagram, the program doesn't require a password or logging in. In addition, the program is completely local.
+Insta Unfollowers is a command-line tool that can be used to find the Instagram accounts that don't follow you back along with other statistics. By using an export from Instagram, the program doesn't require a password or logging in. In addition, the program is completely local.
 
 <img src="assets/demo.png" alt="Example output" width="600">
 
@@ -51,7 +51,7 @@ When asked for the folder, enter `example_export`.
 insta-unfollowers
 ```
 
-When asked for the path, drag the unzipped folder into the terminal and press enter. Alternatively you can paste the file path into the terminal. The results will print in the terminal and will also be saved to `not_following_back.txt` in your current folder.
+When asked for the path, drag the unzipped folder into the terminal and press enter. Alternatively you can paste the file path into the terminal. The results will print in the terminal and will also be saved (if you woudl like) to `not_following_you_back.txt` in your current folder.
 
 ## Privacy
 Runs entirely on your own computer (local), so nothing is uploaded anywhere

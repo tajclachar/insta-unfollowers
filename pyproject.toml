@@ -10,7 +10,8 @@ requires-python = ">=3.10"
 dependencies = ["beautifulsoup4"]
 
 [project.scripts]
-insta-unfollowers = "insta_unfollowers:main"
+insta-unfollowers = "main:main"
 
 [tool.setuptools]
-py-modules = ["insta_unfollowers"]
+package-dir = {"" = "src"}
+py-modules = ["main", "parsing", "insta_unfollowers", "stats"]

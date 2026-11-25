@@ -40,7 +40,7 @@ def main() -> None:
     
     # Save the Results
     if save_decision == "y":
-        save_result(not_following_back, Path("not_following_back.txt"))
+        save_result(not_following_back, Path("not_following_you_back.txt"))
         print("-= Saved to not_following_you_back.txt ❗ =- ")
 
 
