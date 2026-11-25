@@ -12,10 +12,9 @@ def cartesian_product(account: InstaAnalysis) -> list[tuple]:
             every_pair.append(pair)
     return every_pair
 
-def num_cartesian_pairs(cartesian_product_list = list[tuple]) -> int:
+def num_cartesian_pairs(cartesian_product_list: list[tuple]) -> int:
+    
     return len(cartesian_product_list)
-
-
 
 def cartesian_mutual_pairs(account: InstaAnalysis) -> list[tuple]:
     """returns a list of 2-element tuples which contain a follower and following"""
@@ -28,7 +27,7 @@ def cartesian_mutual_pairs(account: InstaAnalysis) -> list[tuple]:
                 every_pair.append(pair)
     return every_pair
 
-def num_cartsian_mutuals_pairs(cartesian_mutual_list: list) -> int:
+def num_cartesian_mutuals_pairs(cartesian_mutual_list: list) -> int:
     return len(cartesian_mutual_list)
 
 

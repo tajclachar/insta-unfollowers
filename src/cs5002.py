@@ -3,6 +3,7 @@
 # Imports
 from pathlib import Path
 from parsing import get_directory, parse_followers, parse_following, read_soup
+from stats import cartesian_product, num_cartesian_pairs, cartesian_mutual_pairs, num_cartesian_mutuals_pairs, unique_accounts, chance_follows_you_back, chance_you_follow_back, summary
 from insta_unfollowers import InstaAnalysis
 
 
@@ -74,13 +75,13 @@ def main():
     # Module 3/4 Cartesian Products & Counting
     # Check if the length of the cartesian product is equal to the cardinality of 
     # the followers set multiplied by the cardinality of the following set
-    cartesian_product = account.cartesian_product()
+    all_pairs = cartesian_product(account)
     print(f"Is the length of the cartesian product equal to the length of the product of the cardinalities of the following and followers set?: {len(cartesian_product) == (len(following) * len(followers))}")
 
-    cartesian_mutuals = account.cartesian_mutual_count()
+    cartesian_mutuals = cartesian_mutual_pairs(account)
     print(f"Is the length of the cartesian product of the following and followers set equal to finding the mutuals using set operations? {(len(cartesian_mutuals) == len(mutuals))}")
 
-    # Probability |E| / |S|
+    # Probability P = |E| / |S|
     # Here our Sample Space is the universal set which si the
     # If I follow someone? Wat is the chance that they follow me back? I other words, what is P(F | G)?
     # P(F | G) = |F ∩ G| / |G| -> The number of mutuals divided by the number of followers
@@ -90,11 +91,6 @@ def main():
     # P(G | F) = |F ∩ G| / |F| -> The number of mutuals divided by the number of followers
     prob_follows_you_back = len(mutuals) / len(followers)
 
-
-    # Bayes theorem can also be used to find the odds that I following someone back if they follow me
-
-
-    
 
 if __name__ == "__main__":
     main()
