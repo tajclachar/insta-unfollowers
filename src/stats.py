@@ -58,7 +58,7 @@ def summary(account: InstaAnalysis) -> dict:
                     "Number of Accounts NOT following you back":number_of_not_following_me_back,
                     "Number of Account you don't follow back":number_you_dont_follow_back,
                     "Number of Friends (Mutuals)":number_of_mutuals,
-                    "Probability you follow someone back":probability_you_follow_them,
-                    "Probability someone follows you back":probability_they_follow_you_back}
+                    "Probability you follow someone back":round(probability_you_follow_them, 2),
+                    "Probability someone follows you back":round(probability_they_follow_you_back, 2)}
 
     return summary_dict
